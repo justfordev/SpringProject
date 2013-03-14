@@ -19,8 +19,18 @@
 		<param-value>Spring Web System</param-value>
 	</context-param>
 
+	<!-- Spring Configures --> 
+	<context-param>
+		<param-name>ContextConfigLocation</param-name>
+		<param-value>/WEB-INF/applicationContext.xml</param-value>
+	</context-param>
+
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+	<!-- welcome page configure -->
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>
-
 </web-app>

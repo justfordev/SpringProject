@@ -6,11 +6,11 @@ group = 'springproject'
 
 repositories {
 	mavenRepo urls: ["http://192.168.1.103:8888/nexus/content/groups/public"]
-	//mavenCentral()
+	mavenCentral()
 }
 
 dependencies {
-	spring_version = "3.1.4.RELEASE"
+	spring_version = "3.0.5.RELEASE"
 	spring = [
 		"org.springframework:spring-core:$spring_version",
 		"org.springframework:spring-beans:$spring_version",
