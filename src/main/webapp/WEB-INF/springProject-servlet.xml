@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+	<!-- Declear processors -->
+	<context:component-scan base-package="com.study.spring" />
+	
+	<!-- HandlerMapping configures -->
+	<bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" />
+
+	<!-- HandlerAdapter configures -->
+	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMetholdHandlerAdapter" />
+	
+</beans>
