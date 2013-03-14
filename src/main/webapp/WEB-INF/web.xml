@@ -4,13 +4,18 @@
     "http://java.sun.com/dtd/web-app_2_3.dtd">
 
 <web-app>
-   <!-- General description of your web application -->
-   <display-name>SpringProject - Webapp</display-name>
-      <description>
-         Describe the SpringProject Webapp here.
-         Administrator@example.com
+	<!-- General description of your web application -->
+	<display-name>SpringProject - Webapp</display-name>
+	<description>
+		Describe the SpringProject Webapp here.
+		justfordev.wu@gmail.com
+		See http://tomcat.apache.org/tomcat-6.0-doc/appdev/web.xml.txt for more
+		information
+		regarding this Web Descriptor File.
+	</description>
 
-         See http://tomcat.apache.org/tomcat-6.0-doc/appdev/web.xml.txt for more information
-         regarding this Web Descriptor File.
-   </description>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+
 </web-app>
