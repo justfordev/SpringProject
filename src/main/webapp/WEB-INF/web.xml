@@ -7,12 +7,17 @@
 	<!-- General description of your web application -->
 	<display-name>SpringProject - Webapp</display-name>
 	<description>
-		Describe the SpringProject Webapp here.
+		The project of SpringProject is just for learning Spring.
 		justfordev.wu@gmail.com
 		See http://tomcat.apache.org/tomcat-6.0-doc/appdev/web.xml.txt for more
 		information
 		regarding this Web Descriptor File.
 	</description>
+	
+	<context-param>
+		<param-name>ServiceName</param-name>
+		<param-value>Spring Web System</param-value>
+	</context-param>
 
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
