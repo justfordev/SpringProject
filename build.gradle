@@ -3,3 +3,26 @@ apply plugin: 'java'
 apply plugin: 'jetty'
 
 group = 'springproject'
+
+repositories {
+	mavenRepo urls: ["http://192.168.1.103:8081/nexus/content/groups/public]
+}
+
+dependencies {
+	spring_version = 3.1.4.RELEASE
+	spring = [
+		"org.springframework:spring-core:$spring_version",
+		"org.springframework:spring-beans:$spring_version",
+		"org.springframework:spring-context:$spring_version",
+		"org.springframework:spring-web:$spring_version",
+		"org.springframework:spring-webmvc:$spring_version"
+	]
+	
+	servlet = [
+		"javax.servlet:servlet-api:2.5"
+	]
+	
+	myjar = fileTree(dir: "/lib", include: "*.jar")
+	
+	compile spring,servlet,myjar
+}
