@@ -5,7 +5,7 @@ apply plugin: 'jetty'
 group = 'springproject'
 
 repositories {
-	mavenRepo urls: ["http://192.168.1.103:8888/nexus/content/groups/public"]
+//	mavenRepo urls: ["http://192.168.1.103:8888/nexus/content/groups/public"]
 	mavenCentral()
 }
 
@@ -23,7 +23,15 @@ dependencies {
 		"javax.servlet:servlet-api:2.5"
 	]
 	
+	apache = [
+		"org.apache.velocity:velocity:1.7",
+		"org.apache.velocity:velocity-tools:2.0",
+		"commons-logging:commons-logging:1.1.1",
+		"commons-io:commons-io:2.0.1",
+		"commons-codec:commons-codec:1.5"
+	]
+	
 	myjar = fileTree(dir: "/lib", include: "*.jar")
 	
-	compile spring,servlet,myjar
+	compile spring,servlet,apache,myjar
 }
