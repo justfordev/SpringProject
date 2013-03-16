@@ -1,0 +1,5 @@
+<div style="BACKGROUND-COLOR: #206C90; overflow: auto; min-height: 750px; min-width: 1210px;">
+    <div id="mainContent">
+        $screen_content
+    </div>
+</div>
