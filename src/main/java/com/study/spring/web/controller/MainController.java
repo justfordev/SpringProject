@@ -1,19 +1,22 @@
 package com.study.spring.web.controller;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.Controller;
 
+@Controller
+public class MainController {
+	
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public String hp() throws Exception {
+		return "index";
+	}
 
-public class MainController implements Controller {
-
-	@Override
-	public ModelAndView handleRequest(HttpServletRequest request,
-			HttpServletResponse response) throws Exception {
+	@RequestMapping(value = "/welcome", method = RequestMethod.GET)
+	public ModelAndView handleRequest() throws Exception {
 		ModelAndView mv = new ModelAndView("welcome");
-		mv.addObject("name", "WangFan");
+		mv.addObject("name", "王帆");
 		return mv;
 	}
 	 
