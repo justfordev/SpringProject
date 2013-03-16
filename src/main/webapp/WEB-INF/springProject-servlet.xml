@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+						http://www.springframework.org/schema/context
+						http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
 	<!-- Declear processors -->
 	<context:component-scan base-package="com.study.spring" />
 	
@@ -7,6 +14,20 @@
 	<bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" />
 
 	<!-- HandlerAdapter configures -->
-	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMetholdHandlerAdapter" />
-	
+	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" />
+
+	<!-- Velocity Configures -->
+	<bean id="velocityConfigurer" class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">
+		<property name="resourceLoaderPath" value="/WEB-INF/velocity/" />
+		<property name="configLocation" value="/WEB-INF/velocity.properties" />
+	</bean>
+
+	<!-- ViewResolver configures -->
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.velocity.VelocityLayoutViewResolver">
+		<property name="suffix" value=".vm" />
+		<property name="toolboxConfigLocation" value="/WEB-INF/velocity-tool.xml" />
+		<property name="viewClass" value="com.study.spring.web.VelocityView" />
+		<property name="LayoutUrl" value="/layout/layout.vm" />
+		<property name="contentType" value="text/html; charset=utf-8"/>
+	</bean>
 </beans>
